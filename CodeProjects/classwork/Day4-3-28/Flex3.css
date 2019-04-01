@@ -1,0 +1,46 @@
+.parent {
+    display: flex;
+}
+.main {
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 70%;
+    justify-content: flex-start;
+}
+.aside {
+    display: flex;
+    flex-flow: column wrap;
+    flex-basis: 30%;
+}
+div:not(.container1.container2) {
+    height: auto;
+    padding: 10px;
+}
+.float-left {
+    float: left;
+}
+.flex {
+    flex: 1 1 100px;
+}
+.orange {
+    background-color: orange;
+}
+.bb {
+    background-color: rgb(15, 136, 235)
+}
+.red {
+    background-color: red;
+}
+.navy {
+    background-color: navy;
+}
+.lime {
+    background-color: lime;
+}
+.green {
+    background-color: green;
+}
+.third {
+    width: calc((100% / 3) - 12px);
+    f
+}

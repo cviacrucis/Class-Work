@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+}
+div {
+    background-color: black;
+    width: 10vw;
+    height: 10vw;
+    float: left;
+}
+div[class] {
+    box-shadow: inset -1px -1px 20px darkslategrey;
+}
+.cyan {
+    background-color: cyan;
+}
+.green {
+    background-color: rgb(55, 216, 55);
+}
+.yellow {
+    background-color: yellow;
+}
+.purple {
+    background-color: rgb(177, 18, 177);
+}
+.red {
+    background-color: red;
+}
+.blue {
+    background-color: blue;
+}
+.orange {
+    background-color: orange;
+}
+.top.bottom {
+    height: calc(10vw-2px);
+}
+.top:not(.bottom), .bottom:not(.top) {
+    height: calc(10vw-1px);
+}
+.left.right {
+    width: calc(10w-2px);
+}
+.left:not(.right), .right:not(.left) {
+    width: calc(10w-1px);
+}
+.top {
+    border-top: 1px solid black;
+}
+.right {
+    border-right: 1px solid black;
+}
+.bottom {
+    border-bottom: 1px solid black;
+}
+.left {
+    border-left: 1px solid black;
+}

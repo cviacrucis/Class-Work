@@ -1,0 +1,19 @@
+body {
+    background-color: cornflowerblue;
+    text-align: center;
+}
+
+h1 {
+    text-align: auto;
+    color: blue
+}
+h2 {
+    text-align: auto;
+    color: purple;
+}
+
+.list {
+    display: inline-block;
+    margin: auto;
+    width: 188px;
+}
