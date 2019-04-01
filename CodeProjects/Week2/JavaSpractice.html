@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Java Intro Practice</title>
+</head>
+
+<body>
+    <script>
+
+        var pizza = {
+            crust: "Thin Crust",
+            topping: "Hawaiian"
+        };
+
+        var cake = {
+            type: "sweets",
+            when: 2019,
+            flavors: ["Red Velvet", "German", "Marble"],
+            frosting: { good: "Whipped", "Butter Cream": "I don't know" }
+        }
+
+        for (var a = 0; a < 101; a++) {
+            if (a % 6 == 0) console.log(a, "FizzBuzz");
+            else if (a % 3 == 0) console.log(a, "Buzz");
+            else if (a % 2 == 0) console.log(a, "Fizz");
+            else console.log(a);
+        }
+        // input for user 4th //
+        var inputFromUser = prompt("Add stuff here");
+        if(inputFromUser.length >= 4){
+            var b = ""
+            for (var i = 3; i < inputFromUser.length; i++){
+                b = b + inputFromUser[i]
+            }
+            console.log(b)
+        }
+        else{
+            console.log("Input too short!")
+        }
+// Random Number //
+var randomNumber = Math.floor(Math.random() * 10) + 1;
+console.log(randomNumber);
+var guess = 0;
+var guessCounter = 0;
+while(guess != randomNumber){
+    guess = prompt("Guess the number between 1 and 10 inclusive...");
+    guessCounter++;
+}
+
+console.log(`You guessed the number in only ${guessCounter} tries!`)
+
+// Pattern //
+for(var i =1; i <=5; i++){
+    var toLog = "";
+    for(var j = 1; j <=i; j++){
+        toLog = toLog + "*";
+    }
+    console.log(toLog);
+}
+
+// Coin Flip //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
