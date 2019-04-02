@@ -29,43 +29,69 @@
         }
         // input for user 4th //
         var inputFromUser = prompt("Add stuff here");
-        if(inputFromUser.length >= 4){
+        if (inputFromUser.length >= 4) {
             var b = ""
-            for (var i = 3; i < inputFromUser.length; i++){
+            for (var i = 3; i < inputFromUser.length; i++) {
                 b = b + inputFromUser[i]
             }
             console.log(b)
         }
-        else{
+        else {
             console.log("Input too short!")
         }
-// Random Number //
-var randomNumber = Math.floor(Math.random() * 10) + 1;
-console.log(randomNumber);
-var guess = 0;
-var guessCounter = 0;
-while(guess != randomNumber){
-    guess = prompt("Guess the number between 1 and 10 inclusive...");
-    guessCounter++;
-}
+        // Random Number //
+        var randomNumber = Math.floor(Math.random() * 10) + 1;
+        console.log(randomNumber);
+        var guess = 0;
+        var guessCounter = 0;
+        while (guess != randomNumber) {
+            guess = prompt("Guess the number between 1 and 10 inclusive...");
+            guessCounter++;
+        }
 
-console.log(`You guessed the number in only ${guessCounter} tries!`)
+        console.log(`You guessed the number in only ${guessCounter} tries!`)
 
-// Pattern //
-for(var i =1; i <=5; i++){
-    var toLog = "";
-    for(var j = 1; j <=i; j++){
-        toLog = toLog + "*";
-    }
-    console.log(toLog);
-}
+        // Pattern //
+        for (var i = 1; i <= 5; i++) {
+            var toLog = "";
+            for (var j = 1; j <= i; j++) {
+                toLog = toLog + "*";
+            }
+            console.log(toLog);
+        }
 
-// Coin Flip //
-var randomNumber = Math.floor(Math.random() 
+       // Coin Flip //
+
+        var coin = Math.floor(Math.random() * 2)
+        var counter = 0;
+        while (coin != 0) {
+            coin = Math.floor(Math.random() * 2)
+            counter++;
+        }
+        console.log(`It took you ${counter} retries to get heads.`)
 
 
 
+        // Comparison
+        var randomNumber = Math.floor(Math.random() * 10) + 1;
+        console.log(randomNumber);
+        var guess = 0;
+        var guessCounter = 0;
+        while (guess != randomNumber) {
+            guess = prompt("Guess the number between 1 and 10 inclusive...");
+            guessCounter++;
+        }
 
+        console.log(`You guessed the number in only ${guessCounter} tries!`)
+
+        var userInputname =
+        var randomNumber2 = Math.floor(Math.random() * 100) + 1;
+        console.log(randomNumber2);
+        var guess = ""
+
+
+
+        
 
 
 
