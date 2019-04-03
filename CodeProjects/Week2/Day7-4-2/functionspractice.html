@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <script>
+        // function divisibilty(num, divisibleBy) {
+        //     if (x % divisibileBy == 0) {
+        //         console.log("Your number is evenly divisible by " + divisibleBy)
+        //     }
+        //     else {
+        //         console.log("X is not evenly divisible by " + divisibleBy)
+        //     }
+        // }
+        // divisibilty(x, 2);
+        // divisibilty(x, 3);
+        // divisibilty(x, 4);
+        // divisibilty(x, 5);
+        // divisibilty(x, 6);
+        // divisibilty(x, 7);
+
+
+
+        //Classwork
+
+        // Pass a number into a function that will return the absolute value 
+        // of that number (absolute value of -1 is 1 and abs of 1 is 1) without the use of built in math functions.
+        function absolute(num) {
+            if (typeof num !== "number") {
+                return "That is not a number"
+            }
+            return num >= 0 ? num : num * -1
+        }
+        console.log(absolute(-2))
+
+        // Make a function called pow that accepts arguments x and y and 
+        // returns the value of x to the y power
+        function powFunction(baseNum, toPower) {
+            return baseNum ** toPower;
+        }
+        console.log(powFunction(13, 2))
+
+
+
+        // Write a function that checks to see if the word as an argument is a palindrome 
+        // (case insensitive) and log the result to the console.
+        function isPalindrome(phrase) {
+            phrase = phrase.toUpperCase().split(" ").join("");
+            var reverse = phrase;
+            reverse = reverse.split("").reverse().join("");
+            return phrase == reverse;
+        }
+        console.log(isPalindrome("Apple"));
+        console.log(isPalindrome("Taco cat"));
+
+
+        // Write a function that accepts an array of banned words and an array of words. 
+        // If any of the banned words appear in the array of words (case sensitive), replace them with "REDACTED",
+        //  do this without any prototypical functions
+        var words = ["apple", "banana", "orange", "kiwi"];
+        var bannedWords = ["watermelon", "kiwano", "passion fruit", "orange"];
+
+        function redact(toCheck, banned) {
+            for (var i = 0; i < toCheck.length; i++) {
+                for (var j = 0; j < banned.length; j++) {
+                    if (toCheck[i] == banned[j]) {
+                        toCheck[i] = "REDACTED";
+                    }
+                }
+            }
+            return toCheck
+        }
+        var redactedWords = redact(words, bannedWords);
+        console.log(redactedWords)
+
+
+
+        // Write a function that accepts two arguments (names can be changed):a and b. Cycle through all numbers between a
+        //  and b (inclusive) and if the number is divisible by 2 log "Fizz" if the number is divisible by 3 log "Buzz" if 
+        // it is divisible by both log "FizzBuzz" otherwise log the number. if a==b log nothing, if b > a count down otherwise count up
+        function fizzBuzz
+        if(i % 6 == 0){
+                        console.log(i, "FizzBuzz");
+                    }
+                    else if(i % 2 == 0){
+                        console.log(i, "Fizz");
+                    }
+                    else if(i % 3 == 0){
+                        console.log(i, "Buzz");
+        
+        
+        
+        
+        
+        function fizzBuzzLoop(start,end){
+            if(typeof start !== "number" || typeof end !== "number" || start == end){
+                return;
+            }
+            else if (start > end){
+                for (var i = start; i > end; i--){
+                   fizzBuzz()
+                }
+            }
+            else {
+                for (var i = start; i < end; i++){
+
+            }
+
+
+
+            for (var i = 0; i > a; i++){
+                for (var i = 0; i <b; i--){
+                    if (i % 2 == 0) console.log("Fizz"){
+                        if(i % 3 == 0) console.log("Buzz"){
+                            if(i % 6 == 0) console.log("FizzBuzz"){
+                                else return a; 
+                            }
+                        }
+                    }
+                } 
+            }
+        }
+
+        fizzBuzz(10,15);
+        fizzBuzz(15,10);
+        fizzBuzz(10,10);
+
+
+        // Write a function that takes a day month and year (in whatever format you choose) and return what day that was.
+        //  Try doing this both WITH and WITHOUT the use of built in libraries.
+        
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
