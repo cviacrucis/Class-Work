@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px black solid;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="search">Search</label>
+    <input type="text" id="search" name="search" placeholder="Search" min="3" value="">
+    <label for="type">Type</label>
+    <select id="type" name="type">
+        <option value="movie">Movie</option>
+        <option value="series">Series</option>
+        <option value="episode">Episode</option>
+    </select>
+    <label for="year">Year</label>
+    <input type="text" id="year" name="year" placeholder="Year" value="">
+    <button id="fetch">Fetch</button>
+    <button id="pageNext">Next Page</button>
+    <div id="container"></div>
+
+    <script>
+        var search = document.getElementById("search");
+        var type = document.getElementById("type");
+        var year = document.getElementById("year");
+        var y = ""
+        var page = 1
+
+        function divCreator(serverres){
+            if(serverres.Response === "False"){
+                document.getElementById("container").innerHTML = "Nothing found please try again";
+            }
+            else{
+            y = serverres.totalResults;
+                    serverres.Search.forEach(function (val) {
+                        var x = document.createElement("div");
+                        x.innerHTML = val.Title + " " + val.Type + " " + val.Year;
+                        document.getElementById("container").append(x);
+                    })
+            }
+
+        }
+
+        function apiCall(){
+            document.getElementById("container").innerHTML = "";
+            if(search.value.length >= 3){
+            var results = `http://www.omdbapi.com/?s=${search.value}&type=${type.value}&y=${year.value}&page=${page}&apikey=a8732d96`
+            fetch(results)
+                .then(function (pagebtn) {
+                    if (!pagebtn.ok) {
+                        console.log("This is not ok")
+                        alert("Error please try again later");
+                    }
+                    return pagebtn.json();
+                })
+                .then(function (serverres) {
+                    console.log(serverres)
+                    divCreator(serverres);
+                })
+            }
+            else{
+                document.getElementById("container").innerHTML = "You must enter three or more characters";
+            }
+        }
+
+        document.getElementById("pageNext").addEventListener("click", function () {
+            page = page <= Math.floor(parseInt(y) / 10) ? page + 1 : 1;
+            console.log(page);
+            apiCall();
+        })
+
+        document.getElementById("fetch").addEventListener("click", function () {
+            apiCall();
+        });
+
+
+    </script>
+</body>
+
+</html>

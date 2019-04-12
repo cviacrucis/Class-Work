@@ -1,0 +1,46 @@
+/* @media (max-width: 1200px) and (min-width: 600px) */
+.rowWrap {
+    flex-flow: row wrap;
+}
+
+.flex {
+    display: flex:
+}
+
+.blue {
+    float: left;
+    width: 80%;
+    height: auto;
+    background-color: skyblue;
+}
+
+.orange {
+    float: right;
+    width: 20%;
+    height: auto;
+    background-color: orange;
+}
+
+.main {
+    float: left;
+    width: 20%;
+    height: 150px;
+    margin: 5px;
+}
+
+.side {
+    float: right;
+    width: 100%;
+    height: 150px;
+    margin: 5px;
+}
+
+.red {
+    float: left;
+    background-color: red;
+    text-align: center;
+    padding-top: 
+    /* line-height: 90px; */
+    color: white;
+}
+/* } */

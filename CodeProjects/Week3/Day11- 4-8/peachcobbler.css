@@ -1,0 +1,41 @@
+header {
+    display: flex;
+    background-color: black;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    width: 100%;
+    
+}
+
+header div {
+    display: flex;
+    width: 100%;
+}
+
+header a {
+    flex: 1 1 calc((100% / 3) - 20px) ;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 55%;
+}
+
+footer {
+    display: flex;
+    background-color: black;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+footer a {
+    display: flex;
+    flex-flow: column;
+}

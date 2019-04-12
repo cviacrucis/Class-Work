@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Movie and TV Search</title>
+    <style media="screen">
+      .main {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="">
+      <label for="searchfield">Search:</label>
+      <input type="text" name="searchfield" placeholder="Title" id="searchfield">
+      <span id="error" style="color:red"></span>
+    </div>
+    <div class="">
+      <label for="year">Year:</label>
+      <input type="text" name="year" placeholder="Year" id="year">
+    </div>
+    <div class="">
+      <label for="type">Type:</label>
+      <select name="type" id="type">
+        <option value="movie">Movie</option>
+        <option value="series">Series</option>
+        <option value="episode">Episode</option>
+      </select>
+    </div>
+
+    <input type="submit" name="submit" value="Submit" id="submit">
+
+    <div class="results">
+
+    </div>
+    <div class="main">
+
+    </div>
+
+    <script type="text/javascript">
+
+    var pageCounter = 1; // counter for the current page of items
+
+// functionality for the submit button
+      document.querySelector('#submit').addEventListener("click", function(){
+        reset();
+
+        var title = document.querySelector('#searchfield').value;
+        var year = document.querySelector('#year').value;
+        var type = document.querySelector('#type').value;
+
+        if(title.length>=3){ //checks for character length of the search query
+          pageCounter=1;
+          apiGet(title, year, type)
+
+        }
+        else {
+          document.querySelector("#error").innerText = "Please enter three or more characters"
+        }
+      })
+
+// clears the figures from the dom
+      function reset() {
+        document.querySelectorAll("figure").forEach(val => val.remove());
+        document.querySelector(".results").innerText = "";
+        document.querySelectorAll("button").forEach(val => val.remove());
+      }
+
+// gets the new json and creates figures with up to 10 entries
+      function apiGet(title, year, type) {
+        fetch('http://www.omdbapi.com/?apikey=e3334332&s=' + title + '&y=' + year + '&type=' + type + '&page=' + pageCounter)
+          .then(response => response.json()) // makes the JSON fetched usable
+          .then(function(json){ //creates figures and captions and image for each result
+            document.querySelector(".results").innerText = "Search has returned " + json.totalResults + " results";
+
+            if(pageCounter>1){ //checks to add a previous page button
+              var prevPage = document.createElement("button");
+              document.querySelector(".results").appendChild(prevPage);
+              prevPage.innerText = "Previous Page";
+              prevPage.addEventListener("click",function(){ //functionality for the previous page button
+                pageCounter--;
+                reset();
+                apiGet(title, year, type);
+              })}
+
+            if(json.totalResults>10){ //checks to add a next page button
+              var nextPage = document.createElement("button");
+              document.querySelector(".results").appendChild(nextPage);
+              nextPage.innerText = "Next Page";
+              nextPage.addEventListener("click",function(){ //functionality for the next page button
+                pageCounter++;
+                reset();
+                apiGet(title, year, type);
+              })}
+            json.Search.forEach(function(val){
+              var newFigure = document.createElement("figure");
+              var newFigcaption = document.createElement("figcaption");
+              var newImg = document.createElement("img");
+              newFigure.appendChild(newImg);
+              newImg.src = val.Poster;
+              newFigure.appendChild(newFigcaption);
+              newFigcaption.innerText = "Title: " + val.Title + "\n" + "Year: " + val.Year;
+              document.querySelector(".main").appendChild(newFigure);
+            })
+
+          })
+      }
+
+
+    </script>
+  </body>
+</html>

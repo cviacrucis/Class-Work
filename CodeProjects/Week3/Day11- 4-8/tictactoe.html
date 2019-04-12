@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div:not(.container){
+            width: calc((100% / 3) - 2px);
+            padding-top: 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+    <script>
+        var isXTurn = true;
+        var boxes = document.querySelectorAll(".box");
+        boxes.forEach(function(val){
+            var classToAdd = isXTurn ? "x" : "o";
+            this.classList.add(classToAdd)
+            isXTurn = !isXTurn
+        }
+    </script>
+</body>
+</html>
